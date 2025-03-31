@@ -1,4 +1,4 @@
-# ScrollOfDebug
+ # ScrollOfDebug
 A scroll that dynamically detects and provides an interface to create classes for the game Shattered Pixel Dungeon and its mods while running the game.
 
 Currently, the Scroll of Debug only works when ran on .jar versions of the game. It lacks the ability to detect files in the Android filesystem.
