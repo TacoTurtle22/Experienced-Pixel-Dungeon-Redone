@@ -1,11 +1,10 @@
 # Experienced Pixel Dungeon
 
-Experienced Pixel Dungeon (Redone) is an open-source pretty grindy traditional roguelike dungeon sandbox with randomized levels, enemies and opportunities to abuse the game, and hundreds of items to collect and grind for. Its based on the [source code of Shattered Pixel Dungeon](https://github.com/00-Evan/shattered-pixel-dungeon), by [00-Evan](https://shatteredpixel.com).
+Experienced Pixel Dungeon (Redone) (Redone again) is an open-source kinda grindy traditional roguelike dungeon sandbox with randomized levels, enemies and opportunities to abuse the game, and hundreds of items to collect and grind for. Its based on the [source code of Experienced Pixel Dungeon](https://github.com/TrashboxBobylev/Experienced-Pixel-Dungeon-Redone), by TrashboxBobylev.
 
-Experienced Pixel Dungeon currently compiles for Android and Desktop platforms. You can find official releases of the game on:
+Experienced Pixel Dungeon Redone x2 currently compiles for Android and Desktop platforms. You can find official releases of the game on:
 
-[![Get it on Google Play](https://shatteredpixel.com/assets/images/badges/gplay.png)](https://play.google.com/store/apps/details?id=com.trashboxbobylev.experiencedpixeldungeon.redone)
-[![Github Releases](https://shatteredpixel.com/assets/images/badges/github.png)](https://github.com/TrashboxBobylev/Experienced-Pixel-Dungeon-Redone/releases)
+Im not done yet, no releases
 
 If you like this game, you can't! [Support Evan Debenham](https://www.patreon.com/ShatteredPixel), who made Shattered, instead.
 
