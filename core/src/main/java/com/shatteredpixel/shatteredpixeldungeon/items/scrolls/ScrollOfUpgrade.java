@@ -57,6 +57,8 @@ public class ScrollOfUpgrade extends InventoryScroll {
     public static final String AC_UPGRADE = "UPGRADE";
 	public static final String AC_UPGRADE_AMOUNT = "UPGRADE_AMOUNT";
 
+	private long numberOfUpgradesUsed;
+
 	{
 		icon = ItemSpriteSheet.Icons.SCROLL_UPGRADE;
 		preferredBag = Belongings.Backpack.class;
@@ -94,16 +96,16 @@ public class ScrollOfUpgrade extends InventoryScroll {
 							"Accept", "Cancel") {
 						@Override public void onSelect(boolean positive, String text) {
 							if(!positive) return;
-							long number = 0;
+							 numberOfUpgradesUsed = 0;
 							try {
-								number = Long.parseLong(text);
+								numberOfUpgradesUsed = Long.parseLong(text);
 							} catch (NumberFormatException e){
 								GLog.w("No valid number was entered.");
 								return;
 							}
-							if (number != 0){
+							if (numberOfUpgradesUsed != 0){
 								curItem = null;
-								curItem = split(number);
+								curItem = split(numberOfUpgradesUsed);
 								updateQuickslot();
 								if (curItem != null){
 									curItem.onDetach( );
@@ -137,7 +139,13 @@ public class ScrollOfUpgrade extends InventoryScroll {
 
 	public void reShowSelector(boolean force, boolean multiUpgrade){
 		identifiedByUse = force;
-		curItem = this;
+		curItem = null;
+		curItem = split(numberOfUpgradesUsed);
+		updateQuickslot();
+		if (curItem != null){
+			curItem.onDetach( );
+		}
+
 		GameScene.selectItem(multiUpgrade ? itemSelector2 : itemSelector);
 	}
 
