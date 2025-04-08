@@ -96,7 +96,7 @@ public class ScrollOfUpgrade extends InventoryScroll {
 							"Accept", "Cancel") {
 						@Override public void onSelect(boolean positive, String text) {
 							if(!positive) return;
-							 numberOfUpgradesUsed = 0;
+							numberOfUpgradesUsed = 0;
 							try {
 								numberOfUpgradesUsed = Long.parseLong(text);
 							} catch (NumberFormatException e){
