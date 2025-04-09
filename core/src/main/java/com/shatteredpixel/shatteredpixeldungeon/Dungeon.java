@@ -123,6 +123,7 @@ public class Dungeon {
 		INT_STONE,
 		TRINKET_CATA,
 		LAB_ROOM, //actually a room, but logic is the same
+		FOOD,
 
 		//Health potion sources
 		//enemies
@@ -678,7 +679,18 @@ public class Dungeon {
 		else return false;
 
 	}
-	
+	public static boolean foodNeeded() {
+		int foodLeftThisSet;
+		//4 food items each floor set
+
+			foodLeftThisSet = 4 - (LimitedDrops.FOOD.count - (depth / 5) * 4);
+
+		if (foodLeftThisSet <= 0) return false;
+
+		int floorThisSet = (depth % 5);
+		//chance is floors left / foods left
+		return Random.Int(5 - floorThisSet) < foodLeftThisSet;
+	}
 	public static boolean souNeeded() {
 		int souLeftThisSet;
 		//3 SOU each floor set, no scrolls on forbidden runes challenge

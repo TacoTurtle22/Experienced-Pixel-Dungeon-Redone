@@ -72,6 +72,9 @@ import com.shatteredpixel.shatteredpixeldungeon.items.Stylus;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.TalismanOfForesight;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.shatteredpixel.shatteredpixeldungeon.items.bombs.Bomb;
+import com.shatteredpixel.shatteredpixeldungeon.items.food.Food;
+import com.shatteredpixel.shatteredpixeldungeon.items.food.MysteryMeat;
+import com.shatteredpixel.shatteredpixeldungeon.items.food.Pasty;
 import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfStrength;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfUpgrade;
@@ -219,8 +222,17 @@ public abstract class Level implements Bundlable {
 		//TODO maybe just make this part of RegularLevel?
 		if (!Dungeon.bossLevel() && Dungeon.branch == 0) {
 
-			addItemToSpawn(Generator.random(Generator.Category.FOOD));
-
+			if (Dungeon.foodNeeded()) {
+				switch (Random.Int(6)){
+					case 0:addItemToSpawn(new Food());
+					case 1:addItemToSpawn(new Food());
+					case 2:addItemToSpawn(new Food());
+					case 3:addItemToSpawn(new Pasty());
+					case 4:addItemToSpawn(new Pasty());
+					case 5:addItemToSpawn(new MysteryMeat());
+				}
+				Dungeon.LimitedDrops.FOOD.count++;
+			}
 			if (Dungeon.posNeeded()) {
 				Dungeon.LimitedDrops.STRENGTH_POTIONS.count++;
 				addItemToSpawn( new PotionOfStrength() );

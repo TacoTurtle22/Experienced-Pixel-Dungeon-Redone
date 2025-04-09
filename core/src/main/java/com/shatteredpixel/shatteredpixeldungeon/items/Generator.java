@@ -536,13 +536,6 @@ public class Generator {
 			MIS_T5.defaultProbs = new float[]{ 3, 3, 3 };
 			MIS_T5.probs = MIS_T5.defaultProbs.clone();
 			
-			FOOD.classes = new Class<?>[]{
-					Food.class,
-					Pasty.class,
-					MysteryMeat.class };
-			FOOD.defaultProbs = new float[]{ 4, 1, 0 };
-			FOOD.probs = FOOD.defaultProbs.clone();
-			
 			RING.classes = new Class<?>[]{
 					RingOfAccuracy.class,
 					RingOfArcana.class,
