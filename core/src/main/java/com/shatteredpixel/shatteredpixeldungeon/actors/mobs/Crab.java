@@ -26,7 +26,7 @@ package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
 
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.MysteryMeat;
+import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfFear;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.CrabSprite;
 
 public class Crab extends Mob {
@@ -41,7 +41,7 @@ public class Crab extends Mob {
 		EXP = 4;
 		maxLvl = 9;
 		
-		loot = new MysteryMeat();
+		loot = new StoneOfFear();
 		lootChance = 0.167f;
 
         switch (Dungeon.cycle){

@@ -30,6 +30,7 @@ import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
 import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Imp;
 import com.shatteredpixel.shatteredpixeldungeon.items.food.Food;
+import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.MonkSprite;
 import com.shatteredpixel.shatteredpixeldungeon.ui.BuffIndicator;
@@ -49,8 +50,8 @@ public class Monk extends Mob {
 		EXP = 11;
 		maxLvl = 21;
 		
-		loot = new Food();
-		lootChance = 0.083f;
+		loot = new ScrollOfUpgrade();
+		lootChance = 0.2f;
 
 		properties.add(Property.UNDEAD);
         switch (Dungeon.cycle){

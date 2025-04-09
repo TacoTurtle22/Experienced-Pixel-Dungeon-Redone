@@ -25,7 +25,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
 
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.Pasty;
+import com.shatteredpixel.shatteredpixeldungeon.items.Honeypot;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.SeniorSprite;
 
 public class Senior extends Monk {
@@ -33,7 +33,7 @@ public class Senior extends Monk {
 	{
 		spriteClass = SeniorSprite.class;
 
-		loot = new Pasty();
+		loot = new Honeypot();
 		lootChance = 1f;
 	}
 	
