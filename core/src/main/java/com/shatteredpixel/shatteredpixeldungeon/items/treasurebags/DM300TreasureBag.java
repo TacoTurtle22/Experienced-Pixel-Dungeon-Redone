@@ -64,7 +64,6 @@ public class DM300TreasureBag extends TreasureBag {
             }
             for (int i = 0; i < 20; i++) items.add(Generator.randomUsingDefaults(Generator.Category.SCROLL).random());
             for (int i = 0; i < 20; i++) items.add(Reflection.newInstance(ExoticPotion.exoToReg.get(Generator.randomUsingDefaults(Generator.Category.SCROLL).getClass())));
-            items.add(Generator.randomUsingDefaults(Generator.Category.FOOD));
             items.add(new ReclaimTrap().quantity(10));
             items.add(new CurseInfusion().quantity(10));
         }

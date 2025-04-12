@@ -224,12 +224,15 @@ public abstract class Level implements Bundlable {
 
 			if (Dungeon.foodNeeded()) {
 				switch (Random.Int(6)){
-					case 0:addItemToSpawn(new Food());
-					case 1:addItemToSpawn(new Food());
-					case 2:addItemToSpawn(new Food());
-					case 3:addItemToSpawn(new Pasty());
-					case 4:addItemToSpawn(new Pasty());
-					case 5:addItemToSpawn(new MysteryMeat());
+					case 0: case 1: case 2:
+						addItemToSpawn(new Food());
+						break;
+					case 3: case 4:
+						addItemToSpawn(new Pasty());
+						break;
+					case 5:
+						addItemToSpawn(new MysteryMeat());
+						break;
 				}
 				Dungeon.LimitedDrops.FOOD.count++;
 			}
@@ -283,7 +286,6 @@ public abstract class Level implements Bundlable {
 						break;
 					case 4:
 						feeling = Feeling.LARGE;
-						addItemToSpawn(Generator.random(Generator.Category.FOOD));
 						break;
 					case 5:
 						feeling = Feeling.TRAPS;

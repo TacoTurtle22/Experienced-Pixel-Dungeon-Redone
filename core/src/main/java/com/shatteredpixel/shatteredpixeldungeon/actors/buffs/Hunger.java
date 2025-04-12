@@ -80,17 +80,17 @@ public class Hunger extends Buff implements Hero.Doom {
 
 			if (isStarving()) {
 
-				partialDamage += STEP * target.HT/1000f;
+				partialDamage += STEP * target.HT/1000f * Math.pow(1.1, (level-STARVING)/STEP);
 
 				if (partialDamage > 1){
 					target.damage( (long) partialDamage, this);
 					partialDamage -= (long)partialDamage;
 				}
 				
-			} else if (!Dungeon.level.locked){
+			}  if (!Dungeon.level.locked){
 
 				float newLevel = level + STEP;
-				if (newLevel >= STARVING) {
+				if (level<STARVING&&newLevel >= STARVING) {
 
 					GLog.n( Messages.get(this, "onstarving") );
 					hero.damage( 1, this );
@@ -144,7 +144,9 @@ public class Hunger extends Buff implements Hero.Doom {
 		}
 
 		float oldLevel = level;
-
+		if (energy>0&&level>STARVING){
+			level = STARVING;
+		}
 		level -= energy;
 		if (level < 0 && !overrideLimits) {
 			level = 0;

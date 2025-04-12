@@ -81,7 +81,6 @@ public class QualityBag extends TreasureBag {
             items.add(Generator.randomUsingDefaults(Generator.Category.POTION).random());
             items.add(Reflection.newInstance(ExoticScroll.exoToReg.get(Generator.randomUsingDefaults(Generator.Category.POTION).getClass())));
 
-            items.add(Generator.random(Generator.Category.FOOD));
             items.add(Generator.random(Generator.Category.STONE));
             Wand wand = (Wand) Generator.random(Generator.Category.WAND);
             wand.cursed = false;

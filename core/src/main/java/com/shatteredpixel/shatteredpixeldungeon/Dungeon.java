@@ -125,6 +125,9 @@ public class Dungeon {
 		LAB_ROOM, //actually a room, but logic is the same
 		FOOD,
 
+		//Limited shop drops
+		ANKH,
+		SMALL_RATIONS,
 		//Health potion sources
 		//enemies
 		SWARM_HP,
@@ -685,11 +688,12 @@ public class Dungeon {
 
 			foodLeftThisSet = 4 - (LimitedDrops.FOOD.count - (depth / 5) * 4);
 
-		if (foodLeftThisSet <= 0) return false;
+	//	if (foodLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);
 		//chance is floors left / foods left
-		return Random.Int(5 - floorThisSet) < foodLeftThisSet;
+		//return Random.Int(5 - floorThisSet) < foodLeftThisSet;
+		return (Math.ceil(.8f*depth)>LimitedDrops.FOOD.count);
 	}
 	public static boolean souNeeded() {
 		int souLeftThisSet;

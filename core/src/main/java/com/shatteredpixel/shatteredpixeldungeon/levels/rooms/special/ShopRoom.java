@@ -24,8 +24,13 @@
 
 package com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special;
 
+
+
+import static com.shatteredpixel.shatteredpixeldungeon.Dungeon.LimitedDrops.*;
+
 import com.shatteredpixel.shatteredpixeldungeon.Badges;
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
+import com.shatteredpixel.shatteredpixeldungeon.Dungeon.LimitedDrops;
 import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Belongings;
 import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
@@ -305,9 +310,17 @@ public class ShopRoom extends SpecialRoom {
         itemsToSpawn.add( Generator.randomUsingDefaults( Generator.Category.SEED ) );
         itemsToSpawn.add( Generator.randomUsingDefaults( Generator.Category.SEED ) );
 
-		itemsToSpawn.add( new SmallRation() );
-		itemsToSpawn.add( new SmallRation() );
-		
+		if (SMALL_RATIONS.count<(Dungeon.depth/5)){
+			itemsToSpawn.add( new SmallRation() );
+			itemsToSpawn.add( new SmallRation() );
+			SMALL_RATIONS.count++;
+		}
+
+		if (ANKH.count<(Dungeon.depth/5)){
+			itemsToSpawn.add( new Ankh() );
+			ANKH.count++;
+		}
+
 		switch (Random.Int(4)){
 			case 0:
 				itemsToSpawn.add( new Bomb() );
@@ -321,7 +334,7 @@ public class ShopRoom extends SpecialRoom {
 				break;
 		}
 
-		itemsToSpawn.add( new Ankh() );
+
 		itemsToSpawn.add( new StoneOfAugmentation() );
 		itemsToSpawn.add(new TicketToArena());
 
